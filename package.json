@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "./node_modules/.bin/babel src --out-dir dist",
-    "start": "node ./dist/client/index.js"
+    "start": "node ./dist/server/server.js"
   },
   "husky": {
     "hooks": {
@@ -36,6 +36,10 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.8.3"
+    "@babel/polyfill": "^7.8.3",
+    "core-js": "^3.6.4",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "regenerator-runtime": "^0.13.3"
   }
 }
