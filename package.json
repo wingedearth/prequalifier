@@ -1,0 +1,20 @@
+{
+  "name": "prequalifier",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/wingedearth/prequalifier.git",
+  "author": "Andrew A. Anissi <andrew@wingedearth.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "./node_modules/.bin/babel src --out-dir dist",
+    "start": "node ./dist/client/index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.3"
+  }
+}
