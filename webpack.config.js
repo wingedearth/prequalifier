@@ -1,5 +1,6 @@
 const path = require('path');
 const getRules = require('./webpack/rules');
+const getPlugins = require('./webpack/plugins');
 
 module.exports = async () => {
 	const isProd = process.env.NODE_ENV === 'production';
@@ -15,6 +16,7 @@ module.exports = async () => {
 		module: {
 			rules: getRules(isProd)
 		},
+		plugins: getPlugins(isProd, true),
 		resolve: {
 			alias: {
 				'@': path.join(__dirname, 'src')

@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 const babelConfigFile = path.join(__dirname, '..', 'babel.config.js');
@@ -19,10 +20,18 @@ const cssRule = {
 	use: ['css-loader']
 };
 
-const sassRule = {
-	test: /\.(scss|sass)$/,
-	exclude: /node_modules/,
-	use: ['css-loader', 'sass-loader']
+const sassRule = isServer => {
+	const rule = {
+		test: /\.(scss|sass)$/,
+		exclude: /node_modules/,
+		use: ['css-loader', 'sass-loader']
+	};
+
+	if (!isServer) {
+		rule.use.unshift(MiniCssExtractPlugin.loader);
+	}
+
+	return rule;
 };
 
 const imageRule = isServer => ({
@@ -42,7 +51,7 @@ const imageRule = isServer => ({
 });
 
 const getRules = (isProd, isServer) => {
-	return [jsRule, cssRule, sassRule, imageRule(isServer)];
+	return [jsRule, cssRule, sassRule(isServer), imageRule(isServer)];
 };
 
 module.exports = getRules;
