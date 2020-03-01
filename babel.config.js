@@ -1,3 +1,9 @@
+const plugins = [
+	'@babel/plugin-proposal-optional-chaining',
+	'@babel/plugin-syntax-dynamic-import',
+	'@babel/plugin-transform-runtime'
+];
+
 const presets = [
 	[
 		'@babel/env',
@@ -15,5 +21,6 @@ const presets = [
 ];
 
 module.exports = {
+	plugins,
 	presets
 };
