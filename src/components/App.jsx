@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { string } from 'prop-types';
 import './App.scss';
 
 const App = ({ title }) => {
 	return (
-		<main>
+		<Fragment>
 			<nav></nav>
-			<h1>{title}</h1>
-			<p>This is a test of the App component.</p>
-		</main>
+			<main>
+				<h1>{title}</h1>
+				<p>This is a test of the App component.</p>
+			</main>
+		</Fragment>
 	);
 };
 

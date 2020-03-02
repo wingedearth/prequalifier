@@ -1,15 +1,20 @@
-$primary-font: 'Cabin';
+@import '@/scss/reset';
 
-main {
-	font-family: $primary-font;
-}
+$primary-font: 'Cabin';
 
 nav {
 	height: 50px;
 	width: 100%;
-	background-color: 'light-gray'
+	background-color: lightgray;
+}
+
+main {
+	font-family: $primary-font;
+	margin: 10px;
+	max-width: 960px;
 }
 
 h1 {
 	font-weight: 600;
+	font-size: 20px;
 }
