@@ -7,9 +7,9 @@ const server = express();
 const port = process.env.PORT || 4000;
 
 // Static paths
-server.use('/dist', express.static('dist'));
-server.use('/dist', express.static('dist/client'));
-server.use('/dist', express.static('dist/server'));
+server.use(express.static('dist'));
+server.use(express.static('dist/client'));
+server.use(express.static('dist/server'));
 
 server.use(router);
 

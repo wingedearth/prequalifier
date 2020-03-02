@@ -1,0 +1,15 @@
+$primary-font: 'Cabin';
+
+main {
+	font-family: $primary-font;
+}
+
+nav {
+	height: 50px;
+	width: 100%;
+	background-color: 'light-gray'
+}
+
+h1 {
+	font-weight: 600;
+}

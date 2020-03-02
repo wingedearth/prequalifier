@@ -1,10 +1,12 @@
 const plugins = [
 	'@babel/plugin-proposal-optional-chaining',
 	'@babel/plugin-syntax-dynamic-import',
-	'@babel/plugin-transform-runtime'
+	'@babel/plugin-transform-runtime',
+	'@babel/plugin-proposal-class-properties'
 ];
 
 const presets = [
+	'@babel/preset-react',
 	[
 		'@babel/env',
 		{
