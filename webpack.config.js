@@ -1,22 +1,53 @@
 const path = require('path');
 const getRules = require('./webpack/rules');
 const getPlugins = require('./webpack/plugins');
+const getOptimization = require('./webpack/optimization');
 
-module.exports = async () => {
-	const isProd = process.env.NODE_ENV === 'production';
+const clientConfigOptions = isProd => {
+	const isServer = false;
 
-	const config = {
-		entry: './src/server/server.js',
-		target: 'node',
+	return {
+		entry: path.join(__dirname, 'src/client/index.js'),
+		output: {
+			filename: 'client.js',
+			path: path.resolve(__dirname, 'dist', 'client')
+		},
+		module: {
+			rules: getRules(isProd, isServer)
+		},
+		optimization: getOptimization(),
+		plugins: getPlugins(isProd, isServer),
+		target: 'web'
+	};
+};
+
+const serverConfigOptions = isProd => {
+	const isServer = true;
+
+	return {
+		entry: {
+			server: path.join(__dirname, 'src/server/server.js')
+		},
 		output: {
 			filename: 'server.js',
-			path: path.join(__dirname, 'dist', 'server')
+			path: path.resolve(__dirname, 'dist', 'server')
 		},
-		mode: isProd ? 'production' : 'development',
 		module: {
-			rules: getRules(isProd)
+			rules: getRules(isProd, isServer)
 		},
-		plugins: getPlugins(isProd, true),
+		optimization: getOptimization(isServer),
+		plugins: getPlugins(isProd, isServer),
+		target: 'node'
+	};
+};
+
+const getConfig = isServer => {
+	const isProd = process.env.NODE_ENV === 'production';
+	const envConfig = isServer ? serverConfigOptions(isProd) : clientConfigOptions(isProd);
+
+	return {
+		...envConfig,
+		mode: isProd ? 'production' : 'development',
 		resolve: {
 			alias: {
 				'@': path.join(__dirname, 'src')
@@ -25,6 +56,6 @@ module.exports = async () => {
 			modules: ['node_modules']
 		}
 	};
-
-	return config;
 };
+
+module.exports = getConfig;
