@@ -1,6 +1,6 @@
 {
   "name": "prequalifier",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "main": "index.js",
   "repository": "https://github.com/wingedearth/prequalifier.git",
   "author": "Andrew A. Anissi <andrew@wingedearth.com>",
@@ -10,6 +10,7 @@
     "build:server": "node ./node_modules/webpack/bin/webpack --config webpack.server.config.js",
     "build": "yarn clean && yarn run build:client && yarn run build:server",
     "clean": "rimraf dist",
+    "release": "standard-version",
     "start": "node ./dist/server/server.js"
   },
   "husky": {
@@ -44,6 +45,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier": "^1.19.1",
+    "standard-version": "^7.1.0",
     "style-loader": "^1.1.3",
     "webpack-assets-manifest": "^3.1.1",
     "webpack-cli": "^3.3.11"
