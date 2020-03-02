@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/wingedearth/prequalifier/compare/v1.1.1...v1.1.2) (2020-03-02)
+
+
+### Bug Fixes
+
+* update README ([b7ec5ea](https://github.com/wingedearth/prequalifier/commit/b7ec5ea33262cda7d419e2bfbaa876cb43e6601a))
+
 ### [1.1.1](https://github.com/wingedearth/prequalifier/compare/v1.1.0...v1.1.1) (2020-03-02)
 
 ## 1.1.0 (2020-03-02)
