@@ -1,19 +1,21 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { func, object } from 'prop-types';
+import { AppContext } from './AppContext';
+import Navigation from '@/components/navigation/Navigation';
 import './App.scss';
 
-const App = ({ title }) => {
+const App = ({ Component, data }) => {
 	return (
-		<main>
-			<nav></nav>
-			<h1>{title}</h1>
-			<p>This is a test of the App component.</p>
-		</main>
+		<AppContext.Provider value={data}>
+			<Navigation />
+			<Component />
+		</AppContext.Provider>
 	);
 };
 
 App.propTypes = {
-	title: string
+	Component: func.isRequired,
+	data: object.isRequired
 };
 
 export default App;
