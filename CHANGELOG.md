@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/wingedearth/prequalifier/compare/v1.1.3...v1.1.4) (2020-03-03)
+
+
+### Features
+
+* set up code splitting and add basic navbar ([976534b](https://github.com/wingedearth/prequalifier/commit/976534b01ccd71c4a7cc9c920294edeb28d11c26))
+
 ### [1.1.3](https://github.com/wingedearth/prequalifier/compare/v1.1.2...v1.1.3) (2020-03-02)
 
 
