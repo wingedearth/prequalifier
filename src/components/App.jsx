@@ -1,21 +1,21 @@
-import React, { Fragment } from 'react';
-import { string } from 'prop-types';
+import React from 'react';
+import { func, object } from 'prop-types';
+import { AppContext } from './AppContext';
+import Navigation from '@/components/navigation/Navigation';
 import './App.scss';
 
-const App = ({ title }) => {
+const App = ({ Component, data }) => {
 	return (
-		<Fragment>
-			<nav></nav>
-			<main>
-				<h1>{title}</h1>
-				<p>This is a test of the App component.</p>
-			</main>
-		</Fragment>
+		<AppContext.Provider value={data}>
+			<Navigation />
+			<Component />
+		</AppContext.Provider>
 	);
 };
 
 App.propTypes = {
-	title: string
+	Component: func.isRequired,
+	data: object.isRequired
 };
 
 export default App;

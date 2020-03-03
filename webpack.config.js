@@ -7,9 +7,11 @@ const clientConfigOptions = isProd => {
 	const isServer = false;
 
 	return {
-		entry: path.join(__dirname, 'src/client/index.js'),
+		entry: {
+			home: path.join(__dirname, 'src/client/Home.js')
+		},
 		output: {
-			filename: 'client.js',
+			filename: '[name].js',
 			path: path.resolve(__dirname, 'dist', 'client')
 		},
 		module: {
@@ -29,7 +31,7 @@ const serverConfigOptions = isProd => {
 			server: path.join(__dirname, 'src/server/server.js')
 		},
 		output: {
-			filename: 'server.js',
+			filename: '[name].js',
 			path: path.resolve(__dirname, 'dist', 'server')
 		},
 		module: {
