@@ -1,0 +1,31 @@
+@import '@/scss/variables';
+
+.navigation {
+	font-family: 'Heebo';
+	font-size: 18px;
+	height: 50px;
+	width: 100%;
+	background-color: gray;
+	color: white;
+}
+
+.navigation__content {
+	line-height: 50px;
+	text-align: center;
+}
+
+.navigation__org {
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+.navigation__page-title {
+	font-weight: normal;
+}
+
+@include tablet {
+	.navigation__content {
+		text-align: left;
+		margin-left: 50px;
+	}
+}

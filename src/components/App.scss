@@ -2,14 +2,11 @@
 
 $primary-font: 'Cabin';
 
-nav {
-	height: 50px;
-	width: 100%;
-	background-color: lightgray;
+body {
+	font-family: $primary-font;
 }
 
 main {
-	font-family: $primary-font;
 	margin: 10px;
 	max-width: 960px;
 }
@@ -17,4 +14,6 @@ main {
 h1 {
 	font-weight: 600;
 	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 0.8px;
 }

@@ -2,8 +2,8 @@ import React from 'react';
 import { hydrate } from 'react-dom';
 import App from '@/components/App';
 
-export const startApp = data => {
-	hydrate(<App {...data} />, document.getElementById('root'));
+export const startApp = (Component, data) => {
+	hydrate(<App data={data} Component={Component} />, document.getElementById('root'));
 };
 
 /**
