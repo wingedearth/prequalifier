@@ -8,10 +8,10 @@
   "scripts": {
     "build:client": "node ./node_modules/webpack/bin/webpack --config webpack.client.config.js",
     "build:client:watch": "node ./node_modules/webpack/bin/webpack --config webpack.client.config.js --watch",
-    "build:server": "node ./node_modules/webpack/bin/webpack --config webpack.server.config.js --watch",
+    "build:server": "node ./node_modules/webpack/bin/webpack --config webpack.server.config.js",
     "build:server:watch": "node ./node_modules/webpack/bin/webpack --config webpack.server.config.js --watch",
     "build:dev": "yarn run build:client:watch & yarn run build:server:watch",
-    "build": "yarn clean && yarn build client && yarn build:server",
+    "build": "yarn clean && yarn build:client && yarn build:server",
     "clean": "rimraf dist",
     "prebuild:dev": "yarn clean && yarn build:client",
     "release": "standard-version",
