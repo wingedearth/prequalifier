@@ -7,10 +7,11 @@
   "license": "MIT",
   "scripts": {
     "build:client": "node ./node_modules/webpack/bin/webpack --config webpack.client.config.js",
-    "build:server": "node ./node_modules/webpack/bin/webpack --config webpack.server.config.js",
-    "build": "yarn clean && yarn run build:client && yarn run build:server",
+    "build:client:watch": "node ./node_modules/webpack/bin/webpack --config webpack.client.config.js --watch",
+    "build:server": "node ./node_modules/webpack/bin/webpack --config webpack.server.config.js --watch",
+    "build": "yarn run build:client:watch & yarn run build:server",
     "clean": "rimraf dist",
-    "dev": "yarn build && yarn start",
+    "prebuild": "yarn clean && yarn build:client",
     "release": "standard-version",
     "start": "node ./dist/server/server.js"
   },
@@ -58,6 +59,7 @@
     "@babel/runtime": "^7.8.4",
     "babel-loader": "^8.0.6",
     "babel-plugin-macros": "^2.8.0",
+    "bulma": "^0.8.0",
     "core-js": "^3.6.4",
     "css-loader": "^3.4.2",
     "express": "^4.17.1",
