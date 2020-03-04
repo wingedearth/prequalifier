@@ -1,19 +1,11 @@
 @import '@/scss/reset';
-
-$primary-font: 'Cabin';
+@import '@/scss/variables';
 
 body {
-	font-family: $primary-font;
+	font-family: $font-1;
 }
 
 main {
 	margin: 10px;
 	max-width: 960px;
-}
-
-h1 {
-	font-weight: 600;
-	font-size: 20px;
-	line-height: 30px;
-	letter-spacing: 0.8px;
 }

@@ -18,5 +18,5 @@ export default (req, res, data = {}, Component, options) => {
 	const markup = renderToString(<App data={appData} Component={Component} />);
 
 	// inject App into template to create page
-	return template(data, markup, options?.entryName);
+	return template(appData, markup, options?.entryName);
 };
