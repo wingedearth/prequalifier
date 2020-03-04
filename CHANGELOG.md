@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/wingedearth/prequalifier/compare/v1.1.4...v1.2.0) (2020-03-04)
+
+
+### Features
+
+* add bulma ([d06a7e9](https://github.com/wingedearth/prequalifier/commit/d06a7e9143d0b55feb526b2ca7261a40ec53ee2f))
+* set up form ([a718a9b](https://github.com/wingedearth/prequalifier/commit/a718a9bb59b0187b787168da06d86192a6afd6ab))
+
 ### [1.1.4](https://github.com/wingedearth/prequalifier/compare/v1.1.3...v1.1.4) (2020-03-03)
 
 

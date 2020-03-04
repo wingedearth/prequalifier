@@ -1,0 +1,36 @@
+@import '@/scss/variables';
+
+h1 {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 0.8px;
+	text-align: center;
+}
+
+h6 {
+	font-style: italic;
+}
+
+form {
+	margin-top: 50px;
+}
+
+.home__submit {
+	width: 100%;
+	text-align: center;
+}
+
+.home__error {
+	color: red;
+	font-size: 12px;
+}
+
+@include desktop() {
+	h1 {
+		text-align: left;
+	}
+	.home__submit {
+		text-align: left;
+	}
+}
