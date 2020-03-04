@@ -16,13 +16,6 @@ form {
 	margin-top: 50px;
 }
 
-input {
-	display: block;
-	height: 35px;
-	margin: 100px auto 5px 0;
-	width: 100%;
-}
-
 .home__submit {
 	width: 100%;
 	text-align: center;
@@ -33,14 +26,11 @@ input {
 	font-size: 12px;
 }
 
-@include tablet() {
-	input {
-		width: 500px;
-	}
-}
-
 @include desktop() {
 	h1 {
+		text-align: left;
+	}
+	.home__submit {
 		text-align: left;
 	}
 }

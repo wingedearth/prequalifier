@@ -1,0 +1,21 @@
+@import '@/scss/variables';
+
+.text-input {
+	margin: 20px auto 20px 0;
+}
+
+input.text-input__input {
+	height: 35px;
+	width: 100%;
+}
+
+.text-input__error {
+	color: red;
+	font-size: 12px;
+}
+
+@include desktop() {
+	input.text-input__input {
+		width: 500px;
+	}
+}

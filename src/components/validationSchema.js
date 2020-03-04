@@ -14,6 +14,7 @@ export default yup.object().shape({
 		.positive(),
 	creditScore: yup
 		.number()
+		.required()
 		.integer()
 		.min(350, 'Credit score cannot be below 350.')
 		.max(850, `Credit score cannot be above 850.`)
