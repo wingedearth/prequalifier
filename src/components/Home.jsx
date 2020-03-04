@@ -2,17 +2,8 @@ import React from 'react';
 import { Field, Form, Formik } from 'formik';
 import { useAppContext } from './AppContext';
 import validationSchema from './validationSchema';
+import TextInput from '@/components/text-input/TextInput';
 import './Home.scss';
-
-// Auto Purchase Price (Currency)
-
-// Auto Make (Text)
-
-// Auto Model (Text)
-
-// User Estimated Yearly Income (Currency)
-
-// User Estimated Credit Score (Number from 300-850)
 
 const initialValues = {
 	price: '',
@@ -32,27 +23,54 @@ const Home = () => {
 			<Formik
 				initialValues={initialValues}
 				validationSchema={validationSchema}
+				validateOnBlur={true}
 				onSubmit={(values, { setSubmitting }) => {
+					console.log('Submitted!');
 					console.log('values:', values);
 				}}
 			>
-				{({ errors, touched, values }) => {
-					console.log('values:', values);
-					console.log('errors:', errors);
-					console.log('touched:', touched);
+				{({ errors, isValid, touched, values }) => {
 
 					return (
 						<Form>
-							<Field name="price" type="text" placeholder="Price of Vehicle" />
-							{touched.price && errors.price && (
-								<p className="home__error">{errors.price}</p>
-							)}
-							<Field name="make" type="text" placeholder="Vehicle Make" />
-							<Field name="model" type="text" placeholder="Vehicle Model" />
-							<Field name="income" placeholder="Your Annual Income (USD)" />
-							<Field name="creditScore" placeholder="Your Estimated Credit Score" />
+							<Field
+								component={TextInput}
+								label="Price of Vehicle (USD)"
+								name="price"
+								placeholder="Price"
+							/>
+							<Field
+								component={TextInput}
+								label="Vehicle Make"
+								name="make"
+								placeholder="Make"
+							/>
+							<Field
+								component={TextInput}
+								label="Vehical Model"
+								name="model"
+								placeholder="Model"
+							/>
+							<Field
+								component={TextInput}
+								label="Your Annual Income (USD)"
+								name="income"
+								placeholder="Income"
+							/>
+							<Field
+								component={TextInput}
+								label="Your Estimated Credit Score (350-850)"
+								name="creditScore"
+								placeholder="Credit Score"
+							/>
 							<div className="home__submit">
-								<button type="submit">Submit</button>
+								<button
+									className="button is-primary"
+									disabled={!isValid}
+									type="submit"
+								>
+									Submit
+								</button>
 							</div>
 						</Form>
 					);
