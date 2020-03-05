@@ -56,6 +56,9 @@ const getConfig = isServer => {
 			},
 			extensions: ['.js', '.json', '.jsx', '.scss'],
 			modules: ['node_modules']
+		},
+		watchOptions: {
+			ignored: /node_modules/
 		}
 	};
 };
