@@ -3,6 +3,7 @@ import { Field, Form, Formik } from 'formik';
 import { useAppContext } from './AppContext';
 import validationSchema from './validationSchema';
 import TextInput from '@/components/text-input/TextInput';
+import axios from 'axios';
 import './Home.scss';
 
 const initialValues = {
@@ -25,8 +26,14 @@ const Home = () => {
 				validationSchema={validationSchema}
 				validateOnBlur={true}
 				onSubmit={(values, { setSubmitting }) => {
-					console.log('Submitted!');
-					console.log('values:', values);
+					axios({
+						method: 'post',
+						url: '/prequalify',
+						data: values
+					}).then(({ data, status }) => {
+						console.log('api response status:', status);
+						console.log('api response data:', data);
+					});
 				}}
 			>
 				{({ errors, isValid, touched, values }) => {
