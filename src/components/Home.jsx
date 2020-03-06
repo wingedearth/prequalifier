@@ -1,8 +1,10 @@
 import React from 'react';
+import { bool } from 'prop-types';
 import { Field, Form, Formik } from 'formik';
 import { useAppContext } from './AppContext';
 import validationSchema from './validationSchema';
 import TextInput from '@/components/text-input/TextInput';
+import axios from 'axios';
 import './Home.scss';
 
 const initialValues = {
@@ -13,6 +15,10 @@ const initialValues = {
 	creditScore: ''
 };
 
+const BadRequest = ({ badreq }) => <p className="bad-request">{badreq ? 'Bad Request' : ''}</p>;
+
+BadRequest.propTypes = { badreq: bool };
+
 const Home = () => {
 	const { title } = useAppContext();
 
@@ -21,18 +27,37 @@ const Home = () => {
 			<h1>{title}</h1>
 			<h6>Qualify For an Auto Loan Today! Why Wait??</h6>
 			<Formik
+				initialStatus={{
+					badreq: false
+				}}
 				initialValues={initialValues}
 				validationSchema={validationSchema}
 				validateOnBlur={true}
-				onSubmit={(values, { setSubmitting }) => {
-					console.log('Submitted!');
-					console.log('values:', values);
+				onSubmit={(values, { resetForm, setStatus, setValues }) => {
+					setStatus({ badreq: false });
+
+					axios({
+						method: 'post',
+						url: '/prequalify',
+						data: values
+					}).then(({ data, status }) => {
+						if (status >= 400 || !data?.validRequest) {
+							setStatus({ badreq: true });
+							setValues(initialValues);
+						} else if (!data?.qualified) {
+							window.location.href = '/sadpanda';
+						}
+
+						console.log('api response status:', status);
+						console.log('api response data:', data);
+					});
 				}}
 			>
-				{({ errors, isValid, touched, values }) => {
+				{({ errors, isValid, status, touched, values }) => {
 
 					return (
 						<Form>
+							<BadRequest badreq={status?.badreq} />
 							<Field
 								component={TextInput}
 								label="Price of Vehicle (USD)"

@@ -8,7 +8,8 @@ const clientConfigOptions = isProd => {
 
 	return {
 		entry: {
-			home: path.join(__dirname, 'src/client/Home.js')
+			home: path.join(__dirname, 'src/client/Home.js'),
+			sadpanda: path.join(__dirname, 'src/client/SadPanda.js')
 		},
 		output: {
 			filename: '[name].js',
@@ -56,6 +57,9 @@ const getConfig = isServer => {
 			},
 			extensions: ['.js', '.json', '.jsx', '.scss'],
 			modules: ['node_modules']
+		},
+		watchOptions: {
+			ignored: /node_modules/
 		}
 	};
 };
