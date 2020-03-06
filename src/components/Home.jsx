@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Field, Form, Formik } from 'formik';
 import { useAppContext } from './AppContext';
 import validationSchema from './validationSchema';
@@ -20,7 +20,7 @@ const Home = () => {
 
 	return (
 		<div className="home">
-			<h1>{title}</h1>
+			<h1 className="home__banner">{title}</h1>
 			<h6>Qualify For an Auto Loan Today! Why Wait??</h6>
 			<Formik
 				initialStatus={{
@@ -42,10 +42,9 @@ const Home = () => {
 							setValues(initialValues);
 						} else if (!data?.qualified) {
 							window.location.href = '/sadpanda';
+						} else {
+							window.location.href = '/newuser';
 						}
-
-						console.log('api response status:', status);
-						console.log('api response data:', data);
 					});
 				}}
 			>
