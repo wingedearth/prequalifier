@@ -1,7 +1,14 @@
+const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const WebpackAssetsManifest = require('webpack-assets-manifest');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const glob = require('glob');
+
+const purgePaths = {
+	src: path.join(__dirname, '..', 'src')
+};
 
 const clientPlugins = [
 	new MiniCssExtractPlugin({
@@ -19,6 +26,9 @@ const clientPlugins = [
 		cssProcessorPluginOptions: {
 			preset: ['default']
 		}
+	}),
+	new PurgecssPlugin({
+		paths: glob.sync(`${purgePaths.src}/**/*`, { nodir: true })
 	})
 ];
 
