@@ -1,0 +1,22 @@
+@import '@/scss/variables';
+
+.disqualified {
+	margin: 10px 10px;
+	text-align: center;
+}
+
+.disqualified__banner {
+	font-size: 38px;
+	display: inline;
+}
+
+.disqualified__subhead {
+	font-size: 12px;
+	display: block;
+}
+
+@include tablet {
+	.disqualified__banner {
+		font-size: 60px;
+	}
+}
