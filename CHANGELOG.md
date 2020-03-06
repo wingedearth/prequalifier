@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/wingedearth/prequalifier/compare/v1.3.0...v1.4.0) (2020-03-06)
+
+
+### Features
+
+* add new user registration ([acc7bb3](https://github.com/wingedearth/prequalifier/commit/acc7bb3d180a37225c9fa734a4a1c95addffa22b))
+
+
+### Bug Fixes
+
+* add purgecss-webpack-plugin ([8d2d693](https://github.com/wingedearth/prequalifier/commit/8d2d693d19fa0f6f9662b57fa1a9efa82f140ddd))
+* style bug fixes ([bbc5f14](https://github.com/wingedearth/prequalifier/commit/bbc5f14fc4a4890187d25a42b76dd3f2c2b8c5ef))
+
 ## [1.3.0](https://github.com/wingedearth/prequalifier/compare/v1.2.0...v1.3.0) (2020-03-06)
 
 
