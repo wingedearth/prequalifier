@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/wingedearth/prequalifier/compare/v1.2.0...v1.3.0) (2020-03-06)
+
+
+### Features
+
+* add api endpoint for form submission with validation ([f467976](https://github.com/wingedearth/prequalifier/commit/f46797607da005b76e034bdd33783b9638dafe95))
+* add disqualification functionality and page ([fc22431](https://github.com/wingedearth/prequalifier/commit/fc22431f1641a6f7c24bb4c7424412fc104d5a35))
+
+
+### Bug Fixes
+
+* resolve prod startup scripts ([9fb3a3e](https://github.com/wingedearth/prequalifier/commit/9fb3a3e68a97312d8de664b5dd6474e0bebd3d00))
+* resolve prod startup scripts ([c1a5d25](https://github.com/wingedearth/prequalifier/commit/c1a5d25c1ba60586cea3eefdaf6731bbc6d53615))
+
 ## [1.2.0](https://github.com/wingedearth/prequalifier/compare/v1.1.4...v1.2.0) (2020-03-04)
 
 
