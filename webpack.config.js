@@ -9,6 +9,7 @@ const clientConfigOptions = isProd => {
 	return {
 		entry: {
 			home: path.join(__dirname, 'src/client/Home.js'),
+			newuser: path.join(__dirname, 'src/client/NewUser.js'),
 			sadpanda: path.join(__dirname, 'src/client/SadPanda.js')
 		},
 		output: {

@@ -10,4 +10,21 @@ main {
 	margin: 0 0;
 }
 
+h1 {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 0.8px;
+	text-align: center;
+}
+
+h6 {
+	font-style: italic;
+	text-align: center;
+}
+
+form {
+	margin-top: 50px;
+}
+
 /*! purgecss end ignore */
