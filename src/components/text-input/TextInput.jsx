@@ -11,6 +11,7 @@ const TextInput = ({ field, form, label, placeholder }) => {
 		<div className="text-input">
 			<label className="label">{label}</label>
 			<input
+				autoComplete="off"
 				className={`input text-input__input ${isDanger ? 'is-danger' : ''}`}
 				{...field}
 				placeholder={placeholder}

@@ -67,7 +67,7 @@ const Home = () => {
 							/>
 							<Field
 								component={TextInput}
-								label="Vehical Model"
+								label="Vehicle Model"
 								name="model"
 								placeholder="Model"
 							/>

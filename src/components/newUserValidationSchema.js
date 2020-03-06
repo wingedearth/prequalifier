@@ -8,13 +8,13 @@ export default yup.object().shape({
 	password: yup
 		.string()
 		.required('Password is required.')
-		.min(8, 'Password must container 8 characters.')
+		.min(9, 'Password must have more then 8 characters.')
 		.matches(
-			/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-			'Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character'
+			/^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+			'Password must have at least one uppercase, one lowercase, a number and a special character'
 		),
 	passwordConfirmation: yup
 		.string()
-		.required()
+		.required('Passwords must match.')
 		.oneOf([yup.ref('password'), null], 'Passwords must match')
 });
