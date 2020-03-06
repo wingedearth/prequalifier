@@ -1,0 +1,28 @@
+@import '@/scss/variables';
+
+.new-user {
+	max-width: 960px;
+	margin: 10px;
+}
+
+.new-user__submit {
+	width: 100%;
+	text-align: center;
+}
+
+h1.new-user__banner {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 0.8px;
+	text-align: center;
+}
+
+h1.registration__banner {
+	margin-top: 50px;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 0.8px;
+	text-align: center;
+}

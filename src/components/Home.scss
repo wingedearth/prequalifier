@@ -1,24 +1,15 @@
 @import '@/scss/variables';
 
-.bad-request {
-	color: red;
-	font-weight: $weight-bold;
+.home {
+	max-width: 960px;
+	margin: 10px;
 }
 
-h1 {
+h1.home__banner {
 	font-weight: 600;
 	font-size: 20px;
 	line-height: 30px;
 	letter-spacing: 0.8px;
-	text-align: center;
-}
-
-h6 {
-	font-style: italic;
-}
-
-form {
-	margin-top: 50px;
 }
 
 .home__submit {
@@ -32,10 +23,7 @@ form {
 }
 
 @include desktop() {
-	h1 {
-		text-align: left;
-	}
-	.home__submit {
+	h1, h6, .home__submit {
 		text-align: left;
 	}
 }

@@ -1,10 +1,10 @@
 import React from 'react';
-import { bool } from 'prop-types';
 import { Field, Form, Formik } from 'formik';
 import { useAppContext } from './AppContext';
 import validationSchema from './validationSchema';
 import TextInput from '@/components/text-input/TextInput';
 import axios from 'axios';
+import BadRequest from './BadRequest';
 import './Home.scss';
 
 const initialValues = {
@@ -15,16 +15,12 @@ const initialValues = {
 	creditScore: ''
 };
 
-const BadRequest = ({ badreq }) => <p className="bad-request">{badreq ? 'Bad Request' : ''}</p>;
-
-BadRequest.propTypes = { badreq: bool };
-
 const Home = () => {
 	const { title } = useAppContext();
 
 	return (
-		<main className="home">
-			<h1>{title}</h1>
+		<div className="home">
+			<h1 className="home__banner">{title}</h1>
 			<h6>Qualify For an Auto Loan Today! Why Wait??</h6>
 			<Formik
 				initialStatus={{
@@ -46,10 +42,9 @@ const Home = () => {
 							setValues(initialValues);
 						} else if (!data?.qualified) {
 							window.location.href = '/sadpanda';
+						} else {
+							window.location.href = '/newuser';
 						}
-
-						console.log('api response status:', status);
-						console.log('api response data:', data);
 					});
 				}}
 			>
@@ -101,7 +96,7 @@ const Home = () => {
 					);
 				}}
 			</Formik>
-		</main>
+		</div>
 	);
 };
 
