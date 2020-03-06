@@ -12,10 +12,12 @@ import './App.scss';
  */
 const App = ({ Component, data }) => {
 	return (
-		<AppContext.Provider value={data}>
-			<Navigation />
-			<Component />
-		</AppContext.Provider>
+		<main>
+			<AppContext.Provider value={data}>
+				<Navigation />
+				<Component />
+			</AppContext.Provider>
+		</main>
 	);
 };
 

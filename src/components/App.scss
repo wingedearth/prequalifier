@@ -1,11 +1,13 @@
 @import '@/scss/reset';
 @import '@/scss/variables';
 
+/*! purgecss start ignore */
 body {
 	font-family: $font-1;
 }
 
 main {
-	margin: 10px;
-	max-width: 960px;
+	margin: 0 0;
 }
+
+/*! purgecss end ignore */
