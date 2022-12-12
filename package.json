@@ -68,7 +68,7 @@
     "bulma": "^0.8.0",
     "core-js": "^3.6.4",
     "css-loader": "^3.4.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "formik": "^2.1.4",
     "glob": "^7.1.6",
     "node-sass": "^4.13.1",
